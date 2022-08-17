@@ -1,0 +1,39 @@
+// Implementing java collection framework  on scenario-based questions.
+//  Task 4 - Queue interface and include stack; 
+ 
+import java.util.*;
+
+class Main{
+    
+    public static void main(String args[]){
+        Queue<Integer> qs = new LinkedList<Integer>();
+        Stack<Integer> s = new Stack<Integer>();
+        
+        int sum=0;
+        for(int i=1; i<=6; i++)
+        {
+            qs.add(i);
+            sum=sum+i;
+        }
+        System.out.println("Queue Elements: "+qs);
+        System.out.println("Sum is :"+sum);
+        
+        System.out.print("Removed Elements: ");
+        for(int j=1; j<=2; j++){
+            int removed_ele1 = qs.remove();
+            System.out.print(removed_ele1+" ");
+            s.add(removed_ele1);
+        }
+        
+        System.out.println("\nExcisted Elements : "+qs);
+        
+        Iterator<Integer> itr1 = qs.iterator();
+        while(itr1.hasNext())
+        {
+            s.add(itr1.next());
+        }
+        System.out.println("Stack Elements: " + s);
+        
+        // System.out.println("Removed Elements : "+s);
+    }
+}
